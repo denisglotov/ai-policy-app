@@ -8,6 +8,7 @@ import {
   Alert,
   RefreshControl,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useFocusEffect } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../theme/colors';
@@ -22,6 +23,7 @@ import { type PolicyEvaluationResult } from '../services/policyEngine';
 import { type ParsedReceipt } from '../services/receiptParserBridge';
 
 export const HistoryScreen: React.FC = () => {
+  const insets = useSafeAreaInsets();
   const [history, setHistory] = useState<ScanHistoryEntry[]>([]);
   const [refreshing, setRefreshing] = useState(false);
   const [selectedEntry, setSelectedEntry] = useState<ScanHistoryEntry | null>(null);
@@ -176,7 +178,7 @@ export const HistoryScreen: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
+      <View style={[styles.header, { paddingTop: Math.max(insets.top, 24) + 12 }]}>
         <View>
           <Text style={styles.headerTitle}>Scan History</Text>
           <Text style={styles.headerSubtitle}>

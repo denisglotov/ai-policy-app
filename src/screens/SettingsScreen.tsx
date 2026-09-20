@@ -10,12 +10,14 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../theme/colors';
 import { getAppSettings, saveAppSettings, resetAppSettings } from '../services/storage';
 import { RESTRICTED_CATEGORIES, CATEGORY_LABELS } from '../services/policyEngine';
 
 export const SettingsScreen: React.FC = () => {
+  const insets = useSafeAreaInsets();
   const [apiKey, setApiKey] = useState('');
   const [model, setModel] = useState('');
   const [baseURL, setBaseURL] = useState('');
@@ -70,7 +72,13 @@ export const SettingsScreen: React.FC = () => {
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={styles.container}
     >
-      <ScrollView contentContainerStyle={styles.scrollContent} keyboardShouldPersistTaps="handled">
+      <ScrollView
+        contentContainerStyle={[
+          styles.scrollContent,
+          { paddingTop: Math.max(insets.top, 24) + 12 },
+        ]}
+        keyboardShouldPersistTaps="handled"
+      >
         <View style={styles.header}>
           <Text style={styles.headerTitle}>Configuration</Text>
           <Text style={styles.headerSubtitle}>Customize AI provider and review policy rules</Text>

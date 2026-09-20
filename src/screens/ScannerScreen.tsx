@@ -11,6 +11,7 @@ import {
   Platform,
   ScrollView,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { CameraView, useCameraPermissions } from 'expo-camera';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../theme/colors';
@@ -26,6 +27,7 @@ const DEFAULT_SAMPLE_URL =
   'https://raw.githubusercontent.com/denisglotov/ai-policy-account/master/test/fixtures/sample_receipt.txt';
 
 export const ScannerScreen: React.FC = () => {
+  const insets = useSafeAreaInsets();
   const [permission, requestPermission] = useCameraPermissions();
   const [manualUrl, setManualUrl] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
@@ -92,7 +94,13 @@ export const ScannerScreen: React.FC = () => {
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={styles.container}
     >
-      <ScrollView contentContainerStyle={styles.scrollContent} keyboardShouldPersistTaps="handled">
+      <ScrollView
+        contentContainerStyle={[
+          styles.scrollContent,
+          { paddingTop: Math.max(insets.top, 24) + 12 },
+        ]}
+        keyboardShouldPersistTaps="handled"
+      >
         {/* Header Title */}
         <View style={styles.topHeader}>
           <Text style={styles.appTitle}>Receipt Scanner</Text>
