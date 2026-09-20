@@ -8,12 +8,12 @@
     "ios": "expo run:ios",
     "web": "expo start --web",
     "prebuild": "expo prebuild",
-    "lint": "eslint 'src/**/*.{ts,tsx}' '__tests__/**/*.{ts,tsx}'",
-    "lint:fix": "eslint --fix 'src/**/*.{ts,tsx}' '__tests__/**/*.{ts,tsx}'",
-    "format": "prettier --write 'src/**/*.{ts,tsx}' '__tests__/**/*.{ts,tsx}' '*.{json,mjs,md}'",
-    "format:check": "prettier --check 'src/**/*.{ts,tsx}' '__tests__/**/*.{ts,tsx}' '*.{json,mjs,md}'",
+    "lint": "eslint 'src/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}'",
+    "lint:fix": "eslint --fix 'src/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}'",
+    "format": "prettier --write 'src/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}' '*.{json,mjs,md}'",
+    "format:check": "prettier --check 'src/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}' '*.{json,mjs,md}'",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test __tests__/**/*.test.ts"
+    "test": "tsx --test test/**/*.test.ts"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.2",

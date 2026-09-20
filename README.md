@@ -45,7 +45,7 @@ mobile-app/
 │   │   └── storage.ts           # AsyncStorage persistence for history and settings
 │   └── theme/
 │       └── colors.ts            # Minimalist dark palette
-├── __tests__/
+├── test/
 │   ├── policyEngine.test.ts     # Automated policy rule validation
 │   └── receiptFetcher.test.ts   # HTML stripping and URL validation tests
 ├── .github/workflows/
