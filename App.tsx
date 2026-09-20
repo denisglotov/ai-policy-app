@@ -1,4 +1,3 @@
-import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -49,16 +48,8 @@ export default function App() {
               },
             })}
           >
-            <Tab.Screen
-              name="Scanner"
-              component={ScannerScreen}
-              options={{ title: 'Scanner' }}
-            />
-            <Tab.Screen
-              name="History"
-              component={HistoryScreen}
-              options={{ title: 'History' }}
-            />
+            <Tab.Screen name="Scanner" component={ScannerScreen} options={{ title: 'Scanner' }} />
+            <Tab.Screen name="History" component={HistoryScreen} options={{ title: 'History' }} />
             <Tab.Screen
               name="Settings"
               component={SettingsScreen}

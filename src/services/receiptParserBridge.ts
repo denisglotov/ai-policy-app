@@ -14,4 +14,4 @@ export {
   getReceiptCacheSize,
   cleanAndParseReceiptJson,
   parseReceipt,
-} from '../../ai-policy/src/oracle/receiptParser.js';
+} from '../../ai-policy/src/oracle/receiptParser';
