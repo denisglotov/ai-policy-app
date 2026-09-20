@@ -1,6 +1,6 @@
 {
   "name": "receipt-policy-scanner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.ts",
   "scripts": {
     "start": "expo start",
@@ -8,7 +8,7 @@
     "ios": "expo run:ios",
     "web": "expo start --web",
     "build:apk": "cd android && ./gradlew assembleRelease",
-    "install:apk": "adb install -r android/app/build/outputs/apk/release/app-release.apk",
+    "install:apk": "npm run build:apk && adb install -r android/app/build/outputs/apk/release/app-release.apk",
     "lint": "eslint 'src/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}'",
     "lint:fix": "eslint --fix 'src/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}'",
     "format": "prettier --write 'src/**/*.{ts,tsx}' 'test/**/*.{ts,tsx}' '*.{json,mjs,md}'",

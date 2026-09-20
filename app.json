@@ -2,10 +2,11 @@
   "expo": {
     "name": "Receipt Policy Scanner",
     "slug": "receipt-policy-scanner",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "icon": "./assets/icon.png",
     "splash": {
       "resizeMode": "contain",
       "backgroundColor": "#0f172a"
@@ -19,6 +20,10 @@
     },
     "android": {
       "package": "com.hackathon.receiptpolicyscanner",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
       "permissions": ["android.permission.CAMERA"]
     },
     "plugins": [

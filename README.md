@@ -4,7 +4,12 @@ A minimalist React Native (Expo) mobile application designed to scan receipt QR 
 receipt contents from fetched URLs, run AI categorization via the `ai-policy` engine, and enforce
 spending policy restrictions.
 
----
+
+## Active Launcher Icon
+
+<p align="center">
+  <img src="./assets/icon.png" alt="Active Launcher Icon" width="160" height="160" />
+</p>
 
 ## Features
 
@@ -21,42 +26,6 @@ spending policy restrictions.
 - **In-App Configuration**: Customize API key, OpenRouter / OpenAI endpoint, and model at runtime.
 - **CI / CD Ready**: Prettier formatting, ESLint, TypeScript checking, and GitHub Actions.
 
----
-
-## Architecture & Code Structure
-
-```
-mobile-app/
-├── ai-policy/                   # Git submodule (Cifra-Ruble-backend)
-│   ├── src/oracle/receiptParser.ts
-│   └── cache-receipts/
-├── src/
-│   ├── components/
-│   │   └── ResultModal.tsx      # Policy decision display (Approved / Denied)
-│   ├── screens/
-│   │   ├── ScannerScreen.tsx    # Live QR camera, overlay reticle, manual URL
-│   │   ├── HistoryScreen.tsx    # Scrollable past scan logs with badges
-│   │   └── SettingsScreen.tsx   # LLM credentials and active policy rules
-│   ├── services/
-│   │   ├── policyEngine.ts      # Policy rule checker (unhealthy drinks/alcohol/tobacco)
-│   │   ├── receiptFetcher.ts    # Fetching URLs and stripping HTML tags/scripts
-│   │   ├── receiptParserBridge.ts # Re-exports from ai-policy submodule
-│   │   ├── scanProcessor.ts     # Pipeline coordinator for scans
-│   │   └── storage.ts           # AsyncStorage persistence for history and settings
-│   └── theme/
-│       └── colors.ts            # Minimalist dark palette
-├── test/
-│   ├── policyEngine.test.ts     # Automated policy rule validation
-│   └── receiptFetcher.test.ts   # HTML stripping and URL validation tests
-├── .github/workflows/
-│   ├── ci.yml                   # Lint, format check, typecheck, unit tests
-│   └── release.yml              # Android APK build and GitHub Release
-├── App.tsx                      # Root component with Bottom Tab Navigator
-├── app.json                     # Expo configuration and camera permissions
-└── package.json                 # Scripts and dependencies
-```
-
----
 
 ## Getting Started
 
@@ -105,7 +74,6 @@ npm run ios
 npm run web
 ```
 
----
 
 ## Code Quality & Verification
 
@@ -126,24 +94,6 @@ npm run typecheck
 npm run test
 ```
 
----
-
-## Policy Rules
-
-The application checks line items against 8 standard categories:
-
-| Category           | Policy Status | Description                                     |
-| :----------------- | :------------ | :---------------------------------------------- |
-| `staple_food`      | **Allowed**   | Meat, dairy, grains, basic bakery, cooking oils |
-| `fresh_produce`    | **Allowed**   | Fresh fruits, vegetables, greens, raw mushrooms |
-| `junk_food`        | **Allowed**   | Chips, chocolates, sweets, pastries             |
-| `drinks`           | **Allowed**   | Water, 100% juices, unsweetened tea, coffee     |
-| `unhealthy_drinks` | **Denied**    | Energy drinks, sugary sodas, sweet bottled teas |
-| `alcohol`          | **Denied**    | Beer, wine, spirits, cider, alcoholic cocktails |
-| `tobacco`          | **Denied**    | Cigarettes, heated tobacco sticks, vape liquids |
-| `other`            | **Allowed**   | Non-food household items, bags, service fees    |
-
----
 
 ## GitHub Actions Workflows
 
