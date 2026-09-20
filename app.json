@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "Receipt Policy Scanner",
+    "slug": "receipt-policy-scanner",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#0f172a"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.hackathon.receiptpolicyscanner",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Allow Receipt Policy Scanner to use your camera to scan receipt QR codes."
+      }
+    },
+    "android": {
+      "package": "com.hackathon.receiptpolicyscanner",
+      "permissions": ["android.permission.CAMERA"]
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Receipt Policy Scanner to use your camera to scan receipt QR codes."
+        }
+      ]
+    ]
+  }
+}

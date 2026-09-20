@@ -1,0 +1,3 @@
+[submodule "ai-policy"]
+	path = ai-policy
+	url = git@github.com:denisglotov/ai-policy-account.git

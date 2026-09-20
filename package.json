@@ -1,0 +1,46 @@
+{
+  "name": "receipt-policy-scanner",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "prebuild": "expo prebuild",
+    "lint": "eslint 'src/**/*.{ts,tsx}' '__tests__/**/*.{ts,tsx}'",
+    "lint:fix": "eslint --fix 'src/**/*.{ts,tsx}' '__tests__/**/*.{ts,tsx}'",
+    "format": "prettier --write 'src/**/*.{ts,tsx}' '__tests__/**/*.{ts,tsx}' '*.{json,mjs,md}'",
+    "format:check": "prettier --check 'src/**/*.{ts,tsx}' '__tests__/**/*.{ts,tsx}' '*.{json,mjs,md}'",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test __tests__/**/*.test.ts"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^15.0.3",
+    "@react-native-async-storage/async-storage": "^3.1.1",
+    "@react-navigation/bottom-tabs": "^7.19.2",
+    "@react-navigation/native": "^7.4.1",
+    "expo": "^57.0.24",
+    "expo-camera": "^57.0.5",
+    "expo-status-bar": "^3.0.9",
+    "openai": "^7.20.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-native": "0.87.1",
+    "react-native-safe-area-context": "^5.10.0",
+    "react-native-screens": "^4.28.0",
+    "viem": "^2.56.8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^22.13.9",
+    "@types/react": "^19.1.1",
+    "eslint": "^10.10.0",
+    "prettier": "^3.9.8",
+    "tsx": "^4.19.3",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.70.0"
+  },
+  "private": true
+}
