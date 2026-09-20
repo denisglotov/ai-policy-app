@@ -21,7 +21,7 @@
     "android": {
       "package": "com.hackathon.receiptpolicyscanner",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
       },
       "permissions": ["android.permission.CAMERA"]

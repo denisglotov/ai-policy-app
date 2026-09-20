@@ -4,9 +4,6 @@ A minimalist React Native (Expo) mobile application designed to scan receipt QR 
 receipt contents from fetched URLs, run AI categorization via the `ai-policy` engine, and enforce
 spending policy restrictions.
 
-
-## Active Launcher Icon
-
 <p align="center">
   <img src="./assets/icon.png" alt="Active Launcher Icon" width="160" height="160" />
 </p>
@@ -25,7 +22,6 @@ spending policy restrictions.
 - **Persistent Scan History**: Local AsyncStorage log of previous scans with status badges.
 - **In-App Configuration**: Customize API key, OpenRouter / OpenAI endpoint, and model at runtime.
 - **CI / CD Ready**: Prettier formatting, ESLint, TypeScript checking, and GitHub Actions.
-
 
 ## Getting Started
 
@@ -74,7 +70,6 @@ npm run ios
 npm run web
 ```
 
-
 ## Code Quality & Verification
 
 ```bash
@@ -93,7 +88,6 @@ npm run typecheck
 # Execute automated unit test suite
 npm run test
 ```
-
 
 ## GitHub Actions Workflows
 
